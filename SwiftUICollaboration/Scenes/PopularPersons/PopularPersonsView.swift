@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct PopularPersonsView: View {
+    
+    @StateObject var model = PopularPersonsViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        List(model.data.results) { people in
+            Text(people.name)
+        }
     }
 }
 
