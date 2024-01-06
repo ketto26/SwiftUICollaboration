@@ -23,7 +23,7 @@ struct People: Decodable, Identifiable {
     let knownForDepartment: KnownForDepartment
     let name, originalName: String
     let popularity: Double
-    let profilePath: String
+    let profilePath: String?
     let knownFor: [KnownFor]?
 
     enum CodingKeys: String, CodingKey {
@@ -94,4 +94,5 @@ enum OriginalLanguage: String, Decodable {
 enum KnownForDepartment: String, Decodable {
     case acting = "Acting"
     case writing = "Writing"
+    case directing = "Directing"
 }

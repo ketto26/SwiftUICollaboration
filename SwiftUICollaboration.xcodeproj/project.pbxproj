@@ -27,6 +27,7 @@
 		0CCBF4C02B4869D300EA8040 /* TVSeriesOnAirModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBF4BF2B4869D300EA8040 /* TVSeriesOnAirModel.swift */; };
 		0CCBF4C22B4869DC00EA8040 /* TVSeriesOnAirViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBF4C12B4869DC00EA8040 /* TVSeriesOnAirViewModel.swift */; };
 		0CCBF4C52B486A4E00EA8040 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBF4C42B486A4E00EA8040 /* MainView.swift */; };
+		63D5730D2B49C9B400D3A272 /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D5730C2B49C9B400D3A272 /* PersonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		0CCBF4BF2B4869D300EA8040 /* TVSeriesOnAirModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSeriesOnAirModel.swift; sourceTree = "<group>"; };
 		0CCBF4C12B4869DC00EA8040 /* TVSeriesOnAirViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSeriesOnAirViewModel.swift; sourceTree = "<group>"; };
 		0CCBF4C42B486A4E00EA8040 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		63D5730C2B49C9B400D3A272 /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				0CCBF4AB2B4868F800EA8040 /* PopularPersonsView.swift */,
 				0CCBF4AF2B48692100EA8040 /* PopularPersonsModel.swift */,
 				0CCBF4AD2B48690D00EA8040 /* PopularPersonsViewModel.swift */,
+				63D5730C2B49C9B400D3A272 /* PersonView.swift */,
 			);
 			path = PopularPersons;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				0CCBF4B02B48692100EA8040 /* PopularPersonsModel.swift in Sources */,
 				0CBD00172B4864320081BA29 /* SwiftUICollaborationApp.swift in Sources */,
 				0CBD00302B4865380081BA29 /* PopularMoviesViewModel.swift in Sources */,
+				63D5730D2B49C9B400D3A272 /* PersonView.swift in Sources */,
 				0CCBF4AC2B4868F800EA8040 /* PopularPersonsView.swift in Sources */,
 				0CCBF4C22B4869DC00EA8040 /* TVSeriesOnAirViewModel.swift in Sources */,
 				0CBD002E2B48652F0081BA29 /* PopularMoviesModel.swift in Sources */,
