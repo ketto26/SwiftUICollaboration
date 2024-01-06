@@ -11,35 +11,22 @@ struct PopularPersonsView: View {
     
     @StateObject var model = PopularPersonsViewModel()
     
-    var gridLayout = [
+    private var gridLayout = [
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
     
     var body: some View {
         
-        
-        
         ScrollView {
             LazyVGrid(columns: gridLayout, content: {
-                ForEach(model.data.results) { people in
+                ForEach(model.data) { people in
                     PersonView(person: people)
-                    
                 }
                 .padding()
             })
         }
-//                VStack {
-//                    List(model.data.results) { people in
-//                        Text(people.name)
-//        
-//        
-//                    }
-//                    .background(.purple)
-//        
-//                }
-        
-        
+        .background(Color(red: 0.10196078431372549, green: 0.13333333333333333, blue: 0.19607843137254902))
     }
 }
 
