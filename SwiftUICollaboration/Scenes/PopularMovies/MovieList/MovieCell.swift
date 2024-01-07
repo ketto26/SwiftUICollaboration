@@ -11,7 +11,7 @@ struct MovieCell: View {
     let movie: Movie
 
     var body: some View {
-        HStack(alignment: .top, spacing: 16) { // ნახე რა მესიჯები 
+        HStack(alignment: .top, spacing: 16) { //
             AsyncImage(
                 url: URL(string: "https://image.tmdb.org/t/p/w200\(movie.posterPath)"),
                 content: { image in
