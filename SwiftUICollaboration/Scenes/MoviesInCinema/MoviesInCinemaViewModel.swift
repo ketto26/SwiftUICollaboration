@@ -25,7 +25,7 @@ struct API {
 
 final class MoviesInCinemaViewModel: ObservableObject {
     @Published var movies: [Movie] = []
-    @Published var selectedMovieReviews: [Review] = []
+    @Published var selectedMovieReviews: [MoviesReview] = []
     @Published var error: Error?
     
     init() {
@@ -56,7 +56,7 @@ final class MoviesInCinemaViewModel: ObservableObject {
     func fetchReviewsForMovie(movieID: Int) {
         let reviewsURL = "https://api.themoviedb.org/3/movie/\(movieID)/reviews?api_key=0457cf9412841fd34455118e6cf20613"
 
-        NetworkService.shared.getData(urlString: reviewsURL) { (result: Result<ReviewsResponse, Error>) in
+        NetworkService.shared.getData(urlString: reviewsURL) { (result: Result<MoviesReviewsResponse, Error>) in
             switch result {
             case .success(let reviewsResponse):
                 DispatchQueue.main.async {

@@ -39,7 +39,7 @@ struct SeriesDetailsView: View {
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(hex: 0x1A2232))
+        .background(Color(hex: "0x1A2232"))
         .navigationTitle("Series Reviews")
         .onAppear {
             
