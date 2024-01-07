@@ -10,10 +10,7 @@ import SwiftUI
 struct CardComponentView: View {
     
     // MARK: - Components
-    var thumbnailImage: String
-    var showName: String
-    var showRating: Double
-    var releaseDate: String
+    var tvShow: TVShow
     var BaseImageURL = "https://image.tmdb.org/t/p/w500"
     
     // MARK: - Body
@@ -31,7 +28,7 @@ struct CardComponentView: View {
     // MARK: - Product Image
     private var productImageView: some View {
         
-        ImageFromURL(imageString: (BaseImageURL + thumbnailImage))
+        ImageFromURL(imageString: (BaseImageURL + tvShow.backdropPath))
             .frame(width: 150, height: 250)
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .clipped()
@@ -46,9 +43,9 @@ struct CardComponentView: View {
     // MARK: - Product Info
     private var productInfo: some View {
         VStack(alignment: .leading) {
-            Text(showName)
+            Text(tvShow.name)
                 .font(.system(size: 16, weight: .bold))
-            Text(releaseDate)
+            Text(tvShow.firstAirDate)
                 .font(.system(size: 12, weight: .light))
         }
         .foregroundStyle(.white)
@@ -57,7 +54,7 @@ struct CardComponentView: View {
     
     // MARK: - Rating
     private var ratingLabel: some View {
-        Text(String(format: "%.1f", showRating))
+        Text(String(format: "%.1f", tvShow.voteAverage))
             .font(.system(size: 14, weight: .semibold))
             .padding(.horizontal, 8)
             .padding(.vertical, 4)
@@ -68,5 +65,6 @@ struct CardComponentView: View {
 }
 
 #Preview {
-    CardComponentView(thumbnailImage: "/v9nGSRx5lFz6KEgfmgHJMSgaARC.jpg", showName: "Binnelanders", showRating: 5.643, releaseDate: "2005-10-13")
+    CardComponentView(tvShow: TVShow(backdropPath: "/v9nGSRx5lFz6KEgfmgHJMSgaARC.jpg", id: 206559, posterPath: "/v9nGSRx5lFz6KEgfmgHJMSgaARC.jpg", firstAirDate: "2005-10-13", name: "Binnelanders", voteAverage: 5.643))
 }
+

@@ -52,12 +52,7 @@ struct PopularTVSeriesView: View {
     
     private func tvShowsSetup(_ tvShow: TVShow) -> some View {
         NavigationLink(value: tvShow) {
-            CardComponentView(
-                thumbnailImage: tvShow.backdropPath,
-                showName: tvShow.name,
-                showRating: tvShow.voteAverage,
-                releaseDate: tvShow.firstAirDate
-            )
+            CardComponentView(tvShow: tvShow)
         }
         .navigationDestination(for: TVShow.self) { tvShow in
             TVSeriesDetailsView(viewModel: TVSeriesDetailsViewModel(id: tvShow.id))

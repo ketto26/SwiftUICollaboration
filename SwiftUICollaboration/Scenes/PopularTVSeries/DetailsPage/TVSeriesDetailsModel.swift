@@ -10,11 +10,7 @@ import Foundation
 // MARK: - DetailsData
 struct DetailsData: Decodable {
     let backdropPath: String
-    let createdBy: [CreatedBy]
-    let firstAirDate: String
-    let genres: [Genre]
     let id: Int
-    let lastAirDate: String
     let name: String
     let numberOfEpisodes, numberOfSeasons: Int
     let overview: String
@@ -23,10 +19,7 @@ struct DetailsData: Decodable {
     
     enum CodingKeys: String, CodingKey {
            case backdropPath = "backdrop_path"
-           case createdBy = "created_by"
-           case firstAirDate = "first_air_date"
-           case genres, id
-           case lastAirDate = "last_air_date"
+           case id
            case name
            case numberOfEpisodes = "number_of_episodes"
            case numberOfSeasons = "number_of_seasons"

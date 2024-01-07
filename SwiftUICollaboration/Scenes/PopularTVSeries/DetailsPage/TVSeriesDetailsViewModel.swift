@@ -12,7 +12,7 @@ final class TVSeriesDetailsViewModel: ObservableObject {
     
     // MARK: - Properties
 
-    @Published var tvShowDetails = DetailsData(backdropPath: "", createdBy: [CreatedBy(name: "")], firstAirDate: "", genres: [Genre(name: "")], id: 206559, lastAirDate: "", name: "", numberOfEpisodes: 4505, numberOfSeasons: 19, overview: "", posterPath: "", voteAverage: 3.5)
+    @Published var tvShowDetails = DetailsData(backdropPath: "", id: 206559, name: "", numberOfEpisodes: 4505, numberOfSeasons: 19, overview: "", posterPath: "", voteAverage: 3.5)
     @Published var currentShowID: Int
     private let apiKey = "0121a87cc86615dcfff388722ec6de80"
 

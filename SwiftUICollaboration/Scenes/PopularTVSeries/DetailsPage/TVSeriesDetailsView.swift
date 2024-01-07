@@ -28,8 +28,10 @@ struct TVSeriesDetailsView: View {
                 ratingInfo
                 detailsInfo
                 Spacer()
-                Text(viewModel.tvShowDetails.overview)
-                    .padding()
+                ScrollView {
+                    Text(viewModel.tvShowDetails.overview)
+                        .padding()
+                }
                 Spacer()
                 
             }
@@ -37,7 +39,7 @@ struct TVSeriesDetailsView: View {
         }
     }
     
-    var ratingInfo: some View {
+    private var ratingInfo: some View {
         VStack(spacing: 5) {
             Text(String(format: "%.1f", viewModel.tvShowDetails.voteAverage))
                 .font(.system(size: 20, weight: .black))
@@ -51,7 +53,7 @@ struct TVSeriesDetailsView: View {
 
     }
     
-    var detailsInfo: some View {
+    private var detailsInfo: some View {
         HStack {
             Text("episodes: ")
             Text("\(viewModel.tvShowDetails.numberOfEpisodes)")
