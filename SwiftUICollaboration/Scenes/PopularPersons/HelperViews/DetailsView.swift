@@ -30,40 +30,7 @@ struct DetailsView: View {
                 
                 // MARK: - Async Image
                 
-                AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(model.profilePath ?? "/r9oTasGQofvkQY5vlUXglneF64Z.jpg" )")) { phase in
-                    switch phase {
-                    case .empty:
-                        ProgressView()
-                    case .success(let image):
-                        let maxWidth = UIScreen.main.bounds.width * 0.75
-                        image.resizable()
-                            .frame(maxWidth: maxWidth, maxHeight: maxWidth * 3/2)
-                        
-                            .cornerRadius(10)
-                        
-                            .overlay(
-                                Rectangle()
-                                    .frame(width: 40, height: 20)
-                                    .cornerRadius(4)
-                                    .foregroundStyle(.orange)
-                                    .padding()
-                                    .overlay(
-                                        Text(String((model.popularity * 10).rounded() / 10))
-                                            .fontWeight(.bold)
-                                            .foregroundStyle(.white)
-                                            .frame(maxWidth: 30, maxHeight: 20)
-                                            .minimumScaleFactor(0.1)
-                                            .lineLimit(1)
-                                    )
-                                , alignment: .topTrailing)
-                            .padding(10)
-                    case .failure(let error):
-                        Image(systemName: "photo")
-                        Text(error.localizedDescription)
-                    @unknown default:
-                        EmptyView()
-                    }
-                }
+                PersonImageView(person: model)
                 
                 // MARK: - Overview Text
                 
@@ -123,7 +90,6 @@ struct DetailsView: View {
                     })
                     .frame(maxWidth: .infinity)
                     .foregroundStyle(.white)
-                    
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 10)
@@ -134,6 +100,42 @@ struct DetailsView: View {
         .background {
             Color(red: 0.10196078431372549, green: 0.13333333333333333, blue: 0.19607843137254902)
                 .ignoresSafeArea()
+        }
+    }
+}
+
+private struct PersonImageView: View {
+    var person: People
+    
+    var body: some View {
+        AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(person.profilePath ?? "/r9oTasGQofvkQY5vlUXglneF64Z.jpg" )")) { phase in
+            switch phase {
+            case .empty:
+                ProgressView()
+            case .success(let image):
+                image.resizable()
+                    .cornerRadius(10)
+                    .overlay(
+                        Rectangle()
+                            .frame(width: 40, height: 20)
+                            .cornerRadius(4)
+                            .foregroundStyle(.orange)
+                            .padding()
+                            .overlay(
+                                Text(String((person.popularity * 10).rounded() / 10))
+                                    .fontWeight(.bold)
+                                    .foregroundStyle(.white)
+                                    .frame(maxWidth: 30, maxHeight: 20)
+                                    .minimumScaleFactor(0.1)
+                                    .lineLimit(1)
+                            )
+                        , alignment: .topTrailing)
+            case .failure(let error):
+                Image(systemName: "photo")
+                Text(error.localizedDescription)
+            @unknown default:
+                EmptyView()
+            }
         }
     }
 }

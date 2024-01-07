@@ -8,7 +8,7 @@
 import SwiftUI
 import NetworkManager
 
-class PopularPersonsViewModel: ObservableObject {
+final class PopularPersonsViewModel: ObservableObject {
     
     // MARK: - Properties
     
