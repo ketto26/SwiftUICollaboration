@@ -40,7 +40,7 @@ struct MoviesInCinemaView: View {
                 }
             }
         }
-        .background(Color(hex: "1A2232"))
+        .background(Color(hex: "#1A2232"))
     }
 }
 

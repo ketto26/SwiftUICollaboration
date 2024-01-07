@@ -11,7 +11,7 @@ import SwiftUI
 
 struct ReviewsView: View {
     let movie: Movie
-    let reviews: [Review]
+    let reviews: [MoviesReview]
     
     var body: some View {
         ScrollView {
@@ -50,7 +50,7 @@ struct ReviewsView: View {
 // MARK: - ReviewItem Subview
 
 struct ReviewItem: View {
-    let review: Review
+    let review: MoviesReview
     
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {

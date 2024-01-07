@@ -29,13 +29,13 @@ struct Movie: Decodable {
 
 // MARK: - ReviewsResponse
 
-struct ReviewsResponse: Decodable {
-    let results: [Review]
+struct MoviesReviewsResponse: Decodable {
+    let results: [MoviesReview]
 }
 
 // MARK: - Review
 
-struct Review: Decodable {
+struct MoviesReview: Decodable {
     let id: String
     let author: String
     let content: String
