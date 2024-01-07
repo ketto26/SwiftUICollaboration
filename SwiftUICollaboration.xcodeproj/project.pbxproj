@@ -10,6 +10,8 @@
 		0C2565C72B49BB800088F32A /* TVSeriesOnAirReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2565C62B49BB800088F32A /* TVSeriesOnAirReviewsView.swift */; };
 		0C2565C92B49D10A0088F32A /* TVSeriesOnAirReviewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2565C82B49D10A0088F32A /* TVSeriesOnAirReviewsModel.swift */; };
 		0C2565CB2B49D1200088F32A /* TVSeriesOnAirReviewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2565CA2B49D1200088F32A /* TVSeriesOnAirReviewsViewModel.swift */; };
+		0C2565CE2B4AD67C0088F32A /* ColourExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2565CD2B4AD67C0088F32A /* ColourExtension.swift */; };
+		0C2565D02B4AD8EB0088F32A /* TVSeriesOnAirAsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2565CF2B4AD8EB0088F32A /* TVSeriesOnAirAsyncImageView.swift */; };
 		0CBD00172B4864320081BA29 /* SwiftUICollaborationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBD00162B4864320081BA29 /* SwiftUICollaborationApp.swift */; };
 		0CBD001B2B4864340081BA29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CBD001A2B4864340081BA29 /* Assets.xcassets */; };
 		0CBD001E2B4864340081BA29 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CBD001D2B4864340081BA29 /* Preview Assets.xcassets */; };
@@ -36,6 +38,8 @@
 		0C2565C62B49BB800088F32A /* TVSeriesOnAirReviewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSeriesOnAirReviewsView.swift; sourceTree = "<group>"; };
 		0C2565C82B49D10A0088F32A /* TVSeriesOnAirReviewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSeriesOnAirReviewsModel.swift; sourceTree = "<group>"; };
 		0C2565CA2B49D1200088F32A /* TVSeriesOnAirReviewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSeriesOnAirReviewsViewModel.swift; sourceTree = "<group>"; };
+		0C2565CD2B4AD67C0088F32A /* ColourExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourExtension.swift; sourceTree = "<group>"; };
+		0C2565CF2B4AD8EB0088F32A /* TVSeriesOnAirAsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSeriesOnAirAsyncImageView.swift; sourceTree = "<group>"; };
 		0CBD00132B4864320081BA29 /* SwiftUICollaboration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUICollaboration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CBD00162B4864320081BA29 /* SwiftUICollaborationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUICollaborationApp.swift; sourceTree = "<group>"; };
 		0CBD001A2B4864340081BA29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -182,7 +186,9 @@
 				0CCBF4BD2B4869CB00EA8040 /* TVSeriesOnAirView.swift */,
 				0CCBF4BF2B4869D300EA8040 /* TVSeriesOnAirModel.swift */,
 				0CCBF4C12B4869DC00EA8040 /* TVSeriesOnAirViewModel.swift */,
+				0C2565CF2B4AD8EB0088F32A /* TVSeriesOnAirAsyncImageView.swift */,
 				0C2565CC2B49D3800088F32A /* TVSeriesOnAirReview */,
+				0C2565CD2B4AD67C0088F32A /* ColourExtension.swift */,
 			);
 			path = TVSeriesOnAir;
 			sourceTree = "<group>";
@@ -275,6 +281,7 @@
 				0C2565C72B49BB800088F32A /* TVSeriesOnAirReviewsView.swift in Sources */,
 				0CCBF4B22B48693F00EA8040 /* PopularTVSeriesView.swift in Sources */,
 				0CCBF4C02B4869D300EA8040 /* TVSeriesOnAirModel.swift in Sources */,
+				0C2565CE2B4AD67C0088F32A /* ColourExtension.swift in Sources */,
 				0CCBF4AE2B48690D00EA8040 /* PopularPersonsViewModel.swift in Sources */,
 				0CCBF4BE2B4869CB00EA8040 /* TVSeriesOnAirView.swift in Sources */,
 				0CCBF4BA2B4869AB00EA8040 /* MoviesInCinemaModel.swift in Sources */,
@@ -290,6 +297,7 @@
 				0CBD002C2B4865260081BA29 /* PopularMoviesView.swift in Sources */,
 				0C2565CB2B49D1200088F32A /* TVSeriesOnAirReviewsViewModel.swift in Sources */,
 				0CCBF4B62B48695100EA8040 /* PopularTVSeriesViewModel.swift in Sources */,
+				0C2565D02B4AD8EB0088F32A /* TVSeriesOnAirAsyncImageView.swift in Sources */,
 				0CCBF4BC2B4869B400EA8040 /* MoviesInCinemaViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

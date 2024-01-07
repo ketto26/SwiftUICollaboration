@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct TVSeriesOnAirView: View {
+    // MARK: - Properties
     @StateObject private var viewModel = TVSeriesViewModel()
     
+    // MARK: - Body
     var body: some View {
         
         NavigationView {
@@ -19,26 +21,7 @@ struct TVSeriesOnAirView: View {
                     HStack {
                         if let posterPath = series.posterPath,
                            let imageURL = URL(string: "https://image.tmdb.org/t/p/w500\(posterPath)") {
-                            AsyncImage(url: imageURL) { phase in
-                                switch phase {
-                                case .success(let image):
-                                    image
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .frame(width: 50, height: 75)
-                                        .cornerRadius(8)
-                                case .failure(_):
-                                    Image(systemName: "photo")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .frame(width: 50, height: 75)
-                                        .cornerRadius(8)
-                                case .empty:
-                                    ProgressView()
-                                @unknown default:
-                                    EmptyView()
-                                }
-                            }
+                            AsyncImageView(url: imageURL)
                         } else {
                             Image(systemName: "photo")
                                 .resizable()

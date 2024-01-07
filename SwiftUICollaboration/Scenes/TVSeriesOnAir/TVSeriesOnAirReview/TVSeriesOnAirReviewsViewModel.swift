@@ -8,13 +8,18 @@
 import Foundation
 import NetworkManager
 
-struct ReviewResponse: Codable {
+// MARK: - Review Response Model
+struct ReviewResponse: Decodable {
     let results: [Review]
 }
 
-class SeriesDetailsViewModel: ObservableObject {
+// MARK: - Series Details View Model
+final class SeriesDetailsViewModel: ObservableObject {
+    
+    // MARK: Published Properties
     @Published var reviews: [Review] = []
     
+    // MARK: Fetch Reviews
     func fetchReviewsForSeries(apiKey: String, seriesID: Int) {
         let reviewEndpoint = "/tv/\(seriesID)/reviews"
         let reviewURLString = "https://api.themoviedb.org/3\(reviewEndpoint)?api_key=\(apiKey)"

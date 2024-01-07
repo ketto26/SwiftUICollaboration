@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Review: Codable {
+// MARK: - Review Model
+struct Review: Decodable, Identifiable {
     let id: String
     let author: String
     let content: String

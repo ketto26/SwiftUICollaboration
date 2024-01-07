@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct TVSeries: Codable, Identifiable {
+// MARK: - TVSeries Model
+struct TVSeries: Decodable, Identifiable {
     let id: Int
     let name: String
     let firstAirDate: String
@@ -20,6 +21,7 @@ struct TVSeries: Codable, Identifiable {
     }
 }
 
-struct TVSeriesResponse: Codable {
+// MARK: - TVSeriesResponse Model
+struct TVSeriesResponse: Decodable {
     let results: [TVSeries]
 }

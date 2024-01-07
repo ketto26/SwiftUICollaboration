@@ -10,10 +10,12 @@
 import SwiftUI
 
 struct SeriesDetailsView: View {
+    // MARK: - Properties
     let series: TVSeries
     let apiKey: String
     @StateObject var viewModel = SeriesDetailsViewModel()
     
+    // MARK: - Body
     var body: some View {
         VStack {
             Text(series.name)
@@ -21,10 +23,10 @@ struct SeriesDetailsView: View {
                 .padding()
             
             if viewModel.reviews.isEmpty {
-                Text("No reviews available")
+                Text("No reviews for \(series.name)")
                     .padding()
             } else {
-                List(viewModel.reviews, id: \.id) { review in
+                List(viewModel.reviews) { review in
                     VStack(alignment: .leading) {
                         Text(review.author)
                             .font(.headline)
@@ -36,20 +38,15 @@ struct SeriesDetailsView: View {
             }
             Spacer()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(hex: 0x1A2232))
         .navigationTitle("Series Reviews")
         .onAppear {
+            
+            // MARK: - Fetch Reviews
             viewModel.fetchReviewsForSeries(apiKey: apiKey, seriesID: series.id)
         }
     }
 }
 
 
-extension Color {
-    init(hex: Int, opacity: Double = 1.0) {
-        let red = Double((hex & 0xff0000) >> 16) / 255.0
-        let green = Double((hex & 0xff00) >> 8) / 255.0
-        let blue = Double((hex & 0xff) >> 0) / 255.0
-        self.init(.sRGB, red: red, green: green, blue: blue, opacity: opacity)
-    }
-}
