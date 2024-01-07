@@ -10,7 +10,7 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
         TabView {
-            PopularMoviesView()
+            MovieListView()
                 .tabItem {
                     Label("Popular Movies", systemImage: "film")
                 }
