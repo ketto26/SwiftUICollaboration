@@ -7,9 +7,13 @@
 
 import Foundation
 
+// MARK: - ResultsList
+
 struct ResultsList: Decodable {
     let results: [Movie]
 }
+
+// MARK: - Movie
 
 struct Movie: Decodable {
     let id: Int
@@ -23,10 +27,13 @@ struct Movie: Decodable {
     }
 }
 
+// MARK: - ReviewsResponse
+
 struct ReviewsResponse: Decodable {
     let results: [Review]
 }
 
+// MARK: - Review
 
 struct Review: Decodable {
     let id: String
@@ -46,6 +53,8 @@ struct Review: Decodable {
     }
 }
 
+// MARK: - AuthorDetails
+
 struct AuthorDetails: Decodable {
     let name: String
     let username: String
@@ -58,6 +67,7 @@ struct AuthorDetails: Decodable {
         case rating
     }
 }
+
 
 
 

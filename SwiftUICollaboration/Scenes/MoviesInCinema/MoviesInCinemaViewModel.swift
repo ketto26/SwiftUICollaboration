@@ -8,6 +8,10 @@
 import Foundation
 import NetworkManager
 
+
+
+// MARK: - API
+
 struct API {
     static let baseURL = "https://api.themoviedb.org/3"
     static let apiKey = "0457cf9412841fd34455118e6cf20613"
@@ -17,12 +21,19 @@ struct API {
     }
 }
 
+// MARK: - MoviesInCinemaViewModel
+
 final class MoviesInCinemaViewModel: ObservableObject {
     @Published var movies: [Movie] = []
     @Published var selectedMovieReviews: [Review] = []
     @Published var error: Error?
     
+    init() {
+            fetchNowPlayingMovies()
+    }
     
+    // MARK: - FetchNowPlayingMovies
+
     func fetchNowPlayingMovies() {
         let urlString = API.nowPlayingMoviesURL()
         
@@ -40,38 +51,21 @@ final class MoviesInCinemaViewModel: ObservableObject {
         }
     }
     
+    // MARK: - fetchReviewsForMovie
+
     func fetchReviewsForMovie(movieID: Int) {
         let reviewsURL = "https://api.themoviedb.org/3/movie/\(movieID)/reviews?api_key=0457cf9412841fd34455118e6cf20613"
 
-        guard let url = URL(string: reviewsURL) else {
-            print("Invalid URL")
-            return
-        }
-
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
-                print("Error fetching reviews: \(error)")
-                return
-            }
-
-            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200,
-                  let data = data else {
-                print("Invalid response")
-                return
-            }
-
-            do {
-                let decoder = JSONDecoder()
-                let reviewsResponse = try decoder.decode(ReviewsResponse.self, from: data)
-                let reviews = reviewsResponse.results
+        NetworkService.shared.getData(urlString: reviewsURL) { (result: Result<ReviewsResponse, Error>) in
+            switch result {
+            case .success(let reviewsResponse):
                 DispatchQueue.main.async {
-                    self.selectedMovieReviews = reviews
+                    self.selectedMovieReviews = reviewsResponse.results
                 }
-            } catch {
-                print("Decoding error: \(error)")
+            case .failure(let error):
+                print("Error fetching reviews: \(error)")
             }
         }
-        task.resume()
     }
 }
 

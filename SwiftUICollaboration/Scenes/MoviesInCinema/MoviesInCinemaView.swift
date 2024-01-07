@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: - Movies In Cinema View
 
 struct MoviesInCinemaView: View {
     @ObservedObject var viewModel = MoviesInCinemaViewModel()
@@ -15,6 +16,9 @@ struct MoviesInCinemaView: View {
     
     var body: some View {
         ScrollView {
+            
+            // MARK: - Movies Grid
+
             LazyVGrid(columns: Array(repeating: GridItem(), count: 2), spacing: 10) {
                 ForEach(viewModel.movies, id: \.id) { movie in
                     Button(action: {
@@ -27,6 +31,9 @@ struct MoviesInCinemaView: View {
                 }
             }
             .padding()
+            
+            // MARK: - Reviews Sheet
+
             .sheet(isPresented: $isShowingReviews) {
                 if let selectedMovie = selectedMovie {
                     ReviewsView(movie: selectedMovie, reviews: viewModel.selectedMovieReviews)
@@ -34,9 +41,6 @@ struct MoviesInCinemaView: View {
             }
         }
         .background(Color(hex: "1A2232"))
-        .onAppear {
-            viewModel.fetchNowPlayingMovies()
-        }
     }
 }
 

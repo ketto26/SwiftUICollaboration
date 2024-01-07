@@ -30,6 +30,7 @@
 		41809EA52B49A6DF00C44046 /* ReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41809EA42B49A6DF00C44046 /* ReviewsView.swift */; };
 		41809EA72B49BA1700C44046 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41809EA62B49BA1700C44046 /* ColorExtension.swift */; };
 		41809EA92B49BC2100C44046 /* GridItemVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41809EA82B49BC2100C44046 /* GridItemVIew.swift */; };
+		41809EAB2B4AC2FF00C44046 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41809EAA2B4AC2FF00C44046 /* ImageViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		41809EA42B49A6DF00C44046 /* ReviewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsView.swift; sourceTree = "<group>"; };
 		41809EA62B49BA1700C44046 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		41809EA82B49BC2100C44046 /* GridItemVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridItemVIew.swift; sourceTree = "<group>"; };
+		41809EAA2B4AC2FF00C44046 /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				0CCBF4BB2B4869B400EA8040 /* MoviesInCinemaViewModel.swift */,
 				41809EA42B49A6DF00C44046 /* ReviewsView.swift */,
 				41809EA82B49BC2100C44046 /* GridItemVIew.swift */,
+				41809EAA2B4AC2FF00C44046 /* ImageViewExtension.swift */,
 				41809EA62B49BA1700C44046 /* ColorExtension.swift */,
 			);
 			path = MoviesInCinema;
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41809EA52B49A6DF00C44046 /* ReviewsView.swift in Sources */,
+				41809EAB2B4AC2FF00C44046 /* ImageViewExtension.swift in Sources */,
 				0CCBF4C52B486A4E00EA8040 /* MainView.swift in Sources */,
 				0CCBF4B22B48693F00EA8040 /* PopularTVSeriesView.swift in Sources */,
 				0CCBF4C02B4869D300EA8040 /* TVSeriesOnAirModel.swift in Sources */,

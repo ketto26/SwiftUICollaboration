@@ -12,42 +12,27 @@ struct GridItemView: View {
     
     var body: some View {
         VStack {
-            if !movie.posterPath.isEmpty {
-                AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(movie.posterPath)")) { phase in
-                    switch phase {
-                    case .empty:
-                        ProgressView()
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 150, height: 200)
-                            .cornerRadius(8)
-                    case .failure:
-                        Image(systemName: "photo")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 100, height: 150)
-                            .foregroundColor(.gray)
-                    @unknown default:
-                        EmptyView()
-                    }
-                }
-            } else {
-                Image(systemName: "photo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 100, height: 150)
-                    .foregroundColor(.gray)
-            }
-            
-            Text(movie.title)
-                .foregroundColor(.white)
-                .font(.headline)
-                .padding(.top, 5)
-                .lineLimit(1)
+            moviePoster
+            movieTitle
         }
         .cornerRadius(8)
         .padding(4)
     }
+    
+    // MARK: - Subviews
+
+    private var moviePoster: some View {
+        movie.moviePoster(urlString: "https://image.tmdb.org/t/p/w500\(movie.posterPath)",
+                          placeholderSize: CGSize(width: 100, height: 150),
+                          imageSize: CGSize(width: 150, height: 200))
+    }
+    
+    private var movieTitle: some View {
+        Text(movie.title)
+            .foregroundColor(.white)
+            .font(.headline)
+            .padding(.top, 5)
+            .lineLimit(1)
+    }
 }
+

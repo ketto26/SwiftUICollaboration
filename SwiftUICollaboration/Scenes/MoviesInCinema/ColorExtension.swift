@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+// MARK: - Background Color Extension
+
 extension Color {
     init(hex: String) {
         let scanner = Scanner(string: hex)
