@@ -24,7 +24,6 @@ extension Movie {
         posterPath: "Poster_Path",
         releaseDate: Date().formatted(),
         title: "Example Title",
-        video: Bool.random(),
         voteAverage: Double.random(in: 0...5),
         voteCount: Int.random(in: 1...100)
     )

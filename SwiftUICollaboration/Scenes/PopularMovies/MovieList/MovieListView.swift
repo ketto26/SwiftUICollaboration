@@ -9,19 +9,17 @@ import SwiftUI
 
 struct MovieListView: View {
     @StateObject private var viewModel = MovieListViewModel()
-
+    
     var body: some View {
-        NavigationView {
-            List(viewModel.movies) { movie in
-                NavigationLink(destination: MovieDetailsView(movie: movie)) {
-                    MovieCell(movie: movie)
-                }
+        List(viewModel.movies) { movie in
+            NavigationLink(destination: MovieDetailsView(movie: movie)) {
+                MovieCell(movie: movie)
             }
-            .onAppear {
-                viewModel.fetchMovies()
-            }
-            .navigationTitle("Popular Movies")
         }
+        .onAppear {
+            viewModel.fetchMovies()
+        }
+        .navigationTitle("Popular Movies")
     }
 }
 

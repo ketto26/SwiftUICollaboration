@@ -11,27 +11,20 @@ struct MovieCell: View {
     let movie: Movie
 
     var body: some View {
-        HStack(alignment: .top, spacing: 16) {
-            AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w200\(movie.posterPath)")) { phase in
-                switch phase {
-                case .success(let image):
+        HStack(alignment: .top, spacing: 16) { // ნახე რა მესიჯები 
+            AsyncImage(
+                url: URL(string: "https://image.tmdb.org/t/p/w200\(movie.posterPath)"),
+                content: { image in
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 80, height: 120)
                         .cornerRadius(8)
-                case .failure:
-                    Image(systemName: "photo")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 80, height: 120)
-                        .cornerRadius(8)
-                case .empty:
+                },
+                placeholder: {
                     ProgressView()
-                @unknown default:
-                    EmptyView()
                 }
-            }
+            )
 
             VStack(alignment: .leading, spacing: 4) {
                 Text(movie.title)

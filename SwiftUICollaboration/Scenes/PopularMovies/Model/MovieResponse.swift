@@ -17,7 +17,6 @@ struct MovieResponse: Decodable {
     let posterPath: String
     let releaseDate: String
     let title: String
-    let video: Bool
     let voteAverage: Double
     let voteCount: Int
 
@@ -33,7 +32,6 @@ struct MovieResponse: Decodable {
         case posterPath = "poster_path"
         case releaseDate = "release_date"
         case title
-        case video
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
     }

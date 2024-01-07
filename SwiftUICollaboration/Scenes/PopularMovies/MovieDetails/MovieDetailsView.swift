@@ -10,6 +10,7 @@ import SwiftUI
 struct MovieDetailsView: View {
     let movie: Movie
 
+    // MARK: - Body
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
