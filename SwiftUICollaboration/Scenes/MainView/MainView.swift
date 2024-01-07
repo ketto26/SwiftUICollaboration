@@ -12,27 +12,28 @@ struct MainView: View {
         TabView {
             MovieListView()
                 .tabItem {
-                    Label("Popular Movies", systemImage: "film")
+                    Label("Movies", systemImage: "film")
+                    
                 }
             
             PopularPersonsView()
                 .tabItem {
-                    Label("Popular Persons", systemImage: "person.2")
+                    Label("Persons", systemImage: "person.2")
                 }
             
             PopularTVSeriesView()
                 .tabItem {
-                    Label("Popular TV Series", systemImage: "tv")
+                    Label("TV Series", systemImage: "tv")
                 }
             
             MoviesInCinemaView()
                 .tabItem {
-                    Label("Movies in Cinema", systemImage: "movieclapper")
+                    Label("Cinema", systemImage: "movieclapper")
                 }
             
             TVSeriesOnAirView()
                 .tabItem {
-                    Label("TV Series On Air", systemImage: "play.tv")
+                    Label("On Air", systemImage: "play.tv")
                 }
         }
     }

@@ -22,11 +22,11 @@ struct PopularPersonsView: View {
     
     // MARK: - Initialization
     
-    init() {
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        UINavigationBar.appearance().barTintColor = .clear
-    }
+//    init() {
+//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+//        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+//        UINavigationBar.appearance().barTintColor = .clear
+//    }
     
     // MARK: - Body
     

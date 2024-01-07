@@ -11,15 +11,18 @@ struct MovieListView: View {
     @StateObject private var viewModel = MovieListViewModel()
     
     var body: some View {
-        List(viewModel.movies) { movie in
-            NavigationLink(destination: MovieDetailsView(movie: movie)) {
-                MovieCell(movie: movie)
+        NavigationStack {
+            List(viewModel.movies) { movie in
+                NavigationLink(destination: MovieDetailsView(movie: movie)) {
+                    MovieCell(movie: movie)
+                }
             }
+            .onAppear {
+                viewModel.fetchMovies()
+            }
+            .navigationTitle("Popular Movies")
+            
         }
-        .onAppear {
-            viewModel.fetchMovies()
-        }
-        .navigationTitle("Popular Movies")
     }
 }
 

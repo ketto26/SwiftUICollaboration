@@ -7,12 +7,12 @@
 
 import Foundation
 
-typealias Movie = MovieResponse
+typealias PopularMovie = MovieResponse
 
-extension Movie: Identifiable { }
+extension PopularMovie: Identifiable { }
 
-extension Movie {
-    static let example = Movie(
+extension PopularMovie {
+    static let example = PopularMovie(
         adult: Bool.random(),
         backdropPath: "Example Backdrop Path",
         genreIds: [1, 2, 3,],
