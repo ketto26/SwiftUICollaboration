@@ -9,7 +9,7 @@ import Foundation
 import NetworkManager
 
 final class MovieListViewModel: ObservableObject {
-    @Published var movies: [Movie] = []
+    @Published var movies: [PopularMovie] = []
 
     private let apiKey = "c366522f348edd670db84febe45c9e86"
 

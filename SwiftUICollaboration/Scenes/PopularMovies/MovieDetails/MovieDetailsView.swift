@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MovieDetailsView: View {
-    let movie: Movie
+    let movie: PopularMovie
 
     // MARK: - Body
     var body: some View {

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MovieCell: View {
-    let movie: Movie
+    let movie: PopularMovie
 
     var body: some View {
         HStack(alignment: .top, spacing: 16) { //
