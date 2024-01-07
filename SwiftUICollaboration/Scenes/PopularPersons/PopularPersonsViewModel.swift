@@ -10,14 +10,22 @@ import NetworkManager
 
 class PopularPersonsViewModel: ObservableObject {
     
+    // MARK: - Properties
+    
     @Published var data: [People] = []
+    
+    // MARK: - Initialization
     
     init() {
         fetchData()
     }
     
+    // MARK: - Private Methods
+    
     private func fetchData() {
-        NetworkService.shared.getData(urlString: "https://api.themoviedb.org/3/person/popular?language=en-US&page=1&api_key=848852d71ffaab39cb06a12ad40fecbc") { [weak self] (result: Result<PopularPersonsModel, Error>) in
+        let urlString = "https://api.themoviedb.org/3/person/popular?language=en-US&page=1&api_key=848852d71ffaab39cb06a12ad40fecbc"
+        
+        NetworkService.shared.getData(urlString: urlString) { [weak self] (result: Result<PopularPersonsModel, Error>) in
             guard let self else { return }
             
             switch result {

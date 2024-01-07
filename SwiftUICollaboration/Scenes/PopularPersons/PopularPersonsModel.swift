@@ -16,7 +16,7 @@ struct PopularPersonsModel: Decodable {
 }
 
 // MARK: - People
-struct People: Decodable, Identifiable {
+struct People: Decodable, Identifiable, Hashable {
     var id = UUID()
     let adult: Bool
     let gender: Int
@@ -38,7 +38,7 @@ struct People: Decodable, Identifiable {
 }
 
 // MARK: - KnownFor
-struct KnownFor: Decodable {
+struct KnownFor: Decodable, Hashable {
     let adult: Bool
     let backdropPath: String?
     let id: Int

@@ -27,6 +27,7 @@
 		0CCBF4C02B4869D300EA8040 /* TVSeriesOnAirModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBF4BF2B4869D300EA8040 /* TVSeriesOnAirModel.swift */; };
 		0CCBF4C22B4869DC00EA8040 /* TVSeriesOnAirViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBF4C12B4869DC00EA8040 /* TVSeriesOnAirViewModel.swift */; };
 		0CCBF4C52B486A4E00EA8040 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCBF4C42B486A4E00EA8040 /* MainView.swift */; };
+		63C8780A2B4AAD8F0085B7AC /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C878092B4AAD8F0085B7AC /* DetailsView.swift */; };
 		63D5730D2B49C9B400D3A272 /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D5730C2B49C9B400D3A272 /* PersonView.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		0CCBF4BF2B4869D300EA8040 /* TVSeriesOnAirModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSeriesOnAirModel.swift; sourceTree = "<group>"; };
 		0CCBF4C12B4869DC00EA8040 /* TVSeriesOnAirViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSeriesOnAirViewModel.swift; sourceTree = "<group>"; };
 		0CCBF4C42B486A4E00EA8040 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		63C878092B4AAD8F0085B7AC /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		63D5730C2B49C9B400D3A272 /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,7 +127,7 @@
 				0CCBF4AB2B4868F800EA8040 /* PopularPersonsView.swift */,
 				0CCBF4AF2B48692100EA8040 /* PopularPersonsModel.swift */,
 				0CCBF4AD2B48690D00EA8040 /* PopularPersonsViewModel.swift */,
-				63D5730C2B49C9B400D3A272 /* PersonView.swift */,
+				63C8780B2B4ACABF0085B7AC /* HelperViews */,
 			);
 			path = PopularPersons;
 			sourceTree = "<group>";
@@ -179,6 +181,15 @@
 				0CCBF4C42B486A4E00EA8040 /* MainView.swift */,
 			);
 			path = MainView;
+			sourceTree = "<group>";
+		};
+		63C8780B2B4ACABF0085B7AC /* HelperViews */ = {
+			isa = PBXGroup;
+			children = (
+				63D5730C2B49C9B400D3A272 /* PersonView.swift */,
+				63C878092B4AAD8F0085B7AC /* DetailsView.swift */,
+			);
+			path = HelperViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CCBF4C52B486A4E00EA8040 /* MainView.swift in Sources */,
+				63C8780A2B4AAD8F0085B7AC /* DetailsView.swift in Sources */,
 				0CCBF4B22B48693F00EA8040 /* PopularTVSeriesView.swift in Sources */,
 				0CCBF4C02B4869D300EA8040 /* TVSeriesOnAirModel.swift in Sources */,
 				0CCBF4AE2B48690D00EA8040 /* PopularPersonsViewModel.swift in Sources */,
