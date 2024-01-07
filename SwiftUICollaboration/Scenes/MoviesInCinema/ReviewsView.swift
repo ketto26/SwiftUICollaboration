@@ -63,9 +63,15 @@ struct ReviewsView: View {
                             .fixedSize(horizontal: false, vertical: true)
                             .foregroundColor(.white)
                         
-                        Text("Rating: \(review.authorDetails.rating)")
-                            .font(.subheadline)
-                            .foregroundColor(.blue)
+                        if let rating = review.authorDetails?.rating {
+                            Text("Rating: \(rating)")
+                                .font(.subheadline)
+                                .foregroundColor(.blue)
+                        } else {
+                            Text("Rating: N/A")
+                                .font(.subheadline)
+                                .foregroundColor(.blue)
+                        }
                     }
                     .padding()
                     .border(Color.gray, width: 1)

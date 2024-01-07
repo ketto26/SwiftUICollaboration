@@ -35,7 +35,7 @@ struct Review: Decodable {
     let createdAt: String
     let updatedAt: String
     let url: String
-    let authorDetails: AuthorDetails
+    let authorDetails: AuthorDetails?
     
     enum CodingKeys: String, CodingKey {
         case id, author, content
