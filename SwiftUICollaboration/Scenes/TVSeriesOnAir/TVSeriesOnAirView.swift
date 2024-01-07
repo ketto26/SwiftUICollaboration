@@ -13,7 +13,6 @@ struct TVSeriesOnAirView: View {
     var body: some View {
         
         NavigationView {
-            
             List(viewModel.tvSeries, id: \.id) { series in
                 NavigationLink(destination: SeriesDetailsView(series: series, apiKey: "d8ff3e307af3e5b687d07d89d33e6128")) {
                     
@@ -48,7 +47,6 @@ struct TVSeriesOnAirView: View {
                                 .cornerRadius(8)
                         }
                         
-                        
                         VStack(alignment: .leading) {
                             Text(series.name)
                                 .font(.headline)
@@ -63,7 +61,6 @@ struct TVSeriesOnAirView: View {
         .onAppear {
             viewModel.fetchTVSeries()
         }
-        
     }
 }
 
